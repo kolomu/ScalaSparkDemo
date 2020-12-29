@@ -5,6 +5,9 @@ import org.apache.spark.sql.{Row, SparkSession}
 import org.apache.spark.sql.functions.col
 
 object Main extends App {
+
+  KafkaProducer.publishSampleData("Hello World!")
+
   // SparkSession = entry point for Spark to use RDD/DataFrames and Datasets
   val spark:SparkSession = SparkSession.builder()
     .master("local[1]")
